@@ -1,12 +1,4 @@
-site_name: My Docs
+site_name: 语义依存图标注规范
 pages:
 - [index.md, Home]
-- [text1.md, 第一章]
-- [text2md, 第二章]
-- [text3.md, 第三章]
-- [text4.md, 第一章]
-- [text5.md, 第一章]
-- [text6.md, 第一章]
-- [text7.md, 第一章]
-- [text8.md, 第一章]
 theme: readthedocs
