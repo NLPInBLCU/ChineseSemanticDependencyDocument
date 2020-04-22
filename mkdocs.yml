@@ -1,4 +1,2 @@
 site_name: 语义依存图标注规范
-pages:
-- [index.md, Home]
 theme: readthedocs
