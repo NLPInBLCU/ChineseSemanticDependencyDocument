@@ -27,8 +27,11 @@ release = '1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+ 	'recommonmark',
+    'sphinx_markdown_tables',
     'sphinx.ext.todo',
     'sphinx.ext.githubpages',
+    'sphinxemoji.sphinxemoji',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -90,7 +93,7 @@ html_static_path = ['_static']
 #
 # html_sidebars = {}
 #---sphinx-themes-----
-html_theme = 'press'
+html_theme = 'shpinx_rtd_theme'
 
 # Support markdown
 from recommonmark.parser import CommonMarkParser
