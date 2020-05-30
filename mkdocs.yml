@@ -11,4 +11,5 @@ nav:
 - 特殊结构: '特殊结构标注集'
 - 附录: '表格(最后）'
 - 关于: 'NLPinBLCU'
-theme:  material
+theme:  
+  name : mkdocs-material
