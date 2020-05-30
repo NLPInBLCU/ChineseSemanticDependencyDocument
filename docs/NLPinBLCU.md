@@ -2,5 +2,6 @@
 ## 介绍
 这里是北京语言大学语义小分队，更多信息可以从这里找到
 [NLPInBLCU](https://github.com/NLPInBLCU)
+
 ## 联系方式
-123456789
+邵艳秋 Email: yqshao163\<AT\>163.com (请将\<AT\>替换为@)
