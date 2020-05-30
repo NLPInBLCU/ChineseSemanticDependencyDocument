@@ -12,4 +12,4 @@ nav:
 - 附录: '表格(最后）'
 - 关于: 'NLPinBLCU'
 theme:  
-  name : mkdocs-material
+  name : material
