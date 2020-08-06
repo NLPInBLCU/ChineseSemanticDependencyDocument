@@ -14,3 +14,6 @@ nav:
 - 关于: 'NLPinBLCU'
 theme:  
   name : material
+extra:
+  search:
+    language: 'jp'
