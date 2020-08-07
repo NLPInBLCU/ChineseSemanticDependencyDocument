@@ -6,11 +6,3 @@
 ## 联系方式
 
 邵艳秋 Email: yqshao163@163.com
-
-<script src="https://utteranc.es/client.js"
-        repo="https://github.com/Youarerare/comment"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
