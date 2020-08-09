@@ -16,9 +16,7 @@ nav:
 theme:  
   name : material
   language : 'zh'
-  palette:
-    primary: 'white'
-    accent: 'red'
+
 extra:
   search:
     language: 'jp'
