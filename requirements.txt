@@ -3,3 +3,4 @@ sphinx-press-theme
 mkdocs-gitbook
 mkdocs-bootswatch
 mkdocs-material
+mkdocs-git-revision-date-plugin
