@@ -1,0 +1,1281 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.2.2">
+    
+    
+      
+        <title>中枢论元的标注细则 - 中文语义依存图标注规范</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a2408e81.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="中文语义依存图标注规范" class="md-header-nav__button md-logo" aria-label="中文语义依存图标注规范">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            中文语义依存图标注规范
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              中枢论元的标注细则
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="中文语义依存图标注规范" class="md-nav__button md-logo" aria-label="中文语义依存图标注规范">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    中文语义依存图标注规范
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../语义依存图标注概述" title="标注概述" class="md-nav__link">
+      标注概述
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../语义关系概述" title="语义关系" class="md-nav__link">
+      语义关系
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../中枢论元的标注细则" title="中枢论元" class="md-nav__link">
+      中枢论元
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../语义周边角色标注细则" title="周边角色" class="md-nav__link">
+      周边角色
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../语义结构关系的标注细则" title="结构关系" class="md-nav__link">
+      结构关系
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../语义依附标记的标注细则" title="依附标记" class="md-nav__link">
+      依附标记
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../特殊结构标注集" title="特殊结构" class="md-nav__link">
+      特殊结构
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../结语" title="结语" class="md-nav__link">
+      结语
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../附录" title="附录" class="md-nav__link">
+      附录
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../NLPinBLCU" title="关于" class="md-nav__link">
+      关于
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1总述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2体词性成分充当中枢论元
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3谓词性成分充当中枢论元
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3谓词性成分充当中枢论元">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    3.3.1形容词充当中枢论元
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" class="md-nav__link">
+    3.3.2动词充当中枢论元
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4特殊谓词的标注细则
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4特殊谓词的标注细则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341" class="md-nav__link">
+    3.4.1判断动词
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342" class="md-nav__link">
+    3.4.2形式动词
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343" class="md-nav__link">
+    3.4.3趋向动词
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#344" class="md-nav__link">
+    3.4.4心理活动动词
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#345" class="md-nav__link">
+    3.4.5能愿动词
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    3.5谓词特殊结构的标注细则
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5谓词特殊结构的标注细则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351" class="md-nav__link">
+    3.5.1重叠式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352" class="md-nav__link">
+    3.5.2离合式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#353" class="md-nav__link">
+    3.5.3并列式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#354" class="md-nav__link">
+    3.5.4兼语式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#355" class="md-nav__link">
+    3.5.5连谓式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#356" class="md-nav__link">
+    3.5.6中补式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    3.6小结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="3"><br>3中枢论元的标注细则</h1>
+<h2 id="31">3.1总述</h2>
+<p>中枢论元由核心述谓概念充当。标注时，用依存弧将root指向中枢论元，而并不标注中枢论元的具体语义角色。对于中枢论元的标注，简单总结，就是找出一个语义事件的核心述谓概念。</p>
+<p>然而，中枢论元与述谓概念之间的关系并非简单的一一对应。有些语义事件，没有典型的核心述谓概念；有些语义事件，包含多个述谓概念。对于这两种情况，我们需要分开讨论。</p>
+<p>从中枢论元的角度来看，在汉语句子里，谓词性成分和体词性成分都可以充当中枢论元，谓词性成分又可细分为两种类型：动词充当中枢论元的情况以及形容词充当中枢论元的情况。（详见3.2节与3.3.1节）</p>
+<p>从述谓概念的角度来看，一个语义事件往往不止一个述谓概念，有的述谓概念是核心述谓概念，是root（详见3.3.2节）；而有些述谓概念不是核心述谓概念，比如有些形式动词、情态动词（详见3.4节）；有的述谓概念转位做指称概念（详见5.2节）；有的述谓概念激起的语义事件是一个更大语义事件的组成部分，即降级关系（详见5.3节），有的述谓概念组合形成语义事件链（详见5.4节）；；不同的述谓概念之间又组合形成特殊的结构类型，比如连谓、兼语等结构（详见3.5节）。每一种类型，都需要标注细则。</p>
+<p>语义依存图标注体系需要对句子中的每一个成分进行分析，这个过程是对语义关系的解析与重组。关键步骤就是对语义事件中出现的谓词进行分析，确定谁是中枢论元；然后就是句子中间的其他成分进行分析，将有语义关系的词对用依存弧连接起来。</p>
+<h2 id="32">3.2体词性成分充当中枢论元</h2>
+<p>体词性成分包括体词和体词短语，从词类划分角度来说，包括名词、数词、量词以及人称代词。体词是与谓词相对的概念。体词性成分充当中枢论元，主要用来判断或说明事物的种类数量、时间性质、特点用途等。一般来说，体词性成分不能充当谓语，只有以下情况才可以：</p>
+<ol>
+<li>
+<p><strong>只能是肯定句，不能是否定句</strong></p>
+</li>
+<li>
+<p><strong>只能是短句，不能是长句</strong></p>
+</li>
+<li>
+<p><strong>一般只能是口语句式，不能是书面语句式</strong></p>
+</li>
+<li>
+<p><strong>限于说明时间、天气、籍贯、年龄、容貌、数量等的口语短句</strong></p>
+</li>
+</ol>
+<p>从以上四种限制条件来看，体词性成分充当中枢论元时，主要包括三种类型：</p>
+<ol>
+<li>
+<p><strong>时间词作谓语</strong></p>
+</li>
+<li>
+<p><strong>名词性偏正结构作谓语</strong></p>
+</li>
+<li>
+<p><strong>数量词和数量名结构作谓语</strong></p>
+</li>
+</ol>
+<p>对于名词谓语句，root直接指向体词性成分的中心词。</p>
+<blockquote>
+<p>例如：这孩子圆圆的脸蛋。（root，脸蛋）</p>
+</blockquote>
+<p>分析：该句中，“脸蛋”是中心词，故将root指向它，而“孩子”，“圆圆”，“。”这三个成分与脸蛋有语义关系，所以用依存弧标示出来，其他成分之间的语义关系也要标注出来。</p>
+<p>标注结果用依存图结构表示如下：</p>
+<p><center><img src="../media/image-20200529120347096.png" width="420" height="110"></center></p>
+<p><center>图 7体词性成分做中枢论元示例1</center></p>
+<p><center><center><img src="../media/image-20200416213816534.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 8体词性成分做中枢论元示例2</center></p>
+<p>正是因为体词性成分充当中枢论元有诸多限制条件，所以形成的多是单一语义事件，易于标注。但是，有一种情况需要特殊注意，那就是“的”字短语充当中枢论元的情况。“的”字短语是由助词“的”附着在实词或短语后面组成，指称人或事物，属于名词性短语。“的”字短语一般作主语、宾语，但是也能出现在名词谓语句中。</p>
+<blockquote>
+<p>例如：这本书||新买的。（root，买）</p>
+</blockquote>
+<p>分析：在这个句子里，“买的（V+的）”构成的是一个具有指称概念的名词短语，复指主语“这本书”。在对“的”字短语进行标注时，我们将“的”字作为结构中心，其他成分按照实际语义关系进行标注。这样处理的原因在于，“的”字结构中的“的”与普通的助词“的”的语义内涵不同，需要特殊标注出来。</p>
+<p>标注结果用依存图结构形式表示如下：</p>
+<p><center><img src="../media/image-20200416213853547.png" width="420" height="110"></center></p>
+<p><center>图 9体词性成分做中枢论元示例3</center></p>
+<p><center><img src="../media/image-20200416213900753.png" width="420" height="110"></center></p>
+<p><center>图 10体词性成分做中枢论元示例4</center></p>
+<h2 id="33">3.3谓词性成分充当中枢论元</h2>
+<p>谓词性成分包括谓词和谓词短语，从词类划分的角度来说，包括动词、形容词和代替动词、形容词的代词。谓词是与体词相对的概念。谓词性成分充当中枢论元，主要指动词谓语句和形容词谓语句这两种情况。</p>
+<h3 id="331">3.3.1形容词充当中枢论元</h3>
+<p>形容词充当中枢论元的情况在句法上体现出来的主要是形容词谓语句，用来描写人或物的形状、性质、特征等，以形容词为核心。当形容词充当中枢论元的时候，一般也不会出现复杂的长难句，所以在实际标注时，直接将root指向该形容词。</p>
+<blockquote>
+<p>例如：宝塔很高。（root，高）</p>
+</blockquote>
+<p>标注结果依存图结构表示如下：</p>
+<p><center><img src="../media/image-20200416213931353.png" width="420" height="110"></center></p>
+<p><center>图 11形容词充当中枢论元示例1</center></p>
+<p><center><img src="../media/image-20200416213952845.png" width="420" height="110"></center></p>
+<p><center>图 12形容词充当中枢论元示例2</center></p>
+<p>简单来说，形容词充当中枢论元并构成简单语义事件的情况如上介绍所示。然而，形容词与动词的组合也会构成复杂语义事件，这个时候，需要判断不同述谓概念之间的语义联系。一般来说。如果句中出现多个形容词并列充当述谓概念时，将第一个形容词标注为中枢论元root，其余形容词标注按照语义关系与root形容词进行连接即可。</p>
+<blockquote>
+<p>例如：她时而开心，时而忧愁，性格阴晴不定。（root，开心）</p>
+</blockquote>
+<p>分析：这个句子中出现了三个形容词：“开心、忧愁、阴晴不定”，相当于三个语义事件。“开心”和“忧愁”是并列关系，而“阴晴不定”是对前两种关系的总结。我们将root指向第一个形容词“开心”。</p>
+<p>标注结果如下所示：</p>
+<p><center><img src="../media/image-20200529120413465.png" width="500" height="140"></center></p>
+<p><center>图 13形容词充当中枢论元示例3</center></p>
+<p><center><img src="../media/image-20200416214023122.png" width="500" height="140"></center></p>
+<p><center>图 14形容词充当中枢论元示例4</center></p>
+<h3 id="332">3.3.2动词充当中枢论元</h3>
+<p>动词充当中枢论元选择中枢论元最复杂的一类情况。从句法上说，不仅涉及到单句，还涉及到复句、紧缩句等；从语义上说，不仅涉及到单一事件，还涉及到事链。主要用来叙述人或物的动作行为、发展变化等。下面我们分情况讨论事件中动词充当中枢论元的情况。</p>
+<p>1）<strong>语义事件中只有一个动词的情况。</strong></p>
+<p>当语义事件中只有一个动词时，将root指向这个动词。一般来讲，这个动词多是动作行为动词。</p>
+<blockquote>
+<p>例如：公司处分了旷工者。（root，处分）</p>
+</blockquote>
+<p>分析：该事件只有一个动词“处分”，所以将root指向“处分”，其余标注成分按照语义关系进行标注，标注结果用依存图形式表示如下：</p>
+<p><center><img src="../media/image-20200416214101331.png" width="420" height="110"></center></p>
+<p><center>图 15动词充当中枢论元示例1</center></p>
+<p><center><img src="../media/image-20200416214110255.png" width="420" height="110"></center></p>
+<p><center>图 16动词充当中枢论元示例2</center></p>
+<p>2）<strong>语义事件中有多个动词的情况。</strong></p>
+<p>当语义事件中出现多个动词时，默认情况是将核心述谓概念作为中枢概念root的，但真实语言情况复杂多变，我们需要注意复杂的语言现象中找出核心的述谓概念。比如以下情况。</p>
+<blockquote>
+<ol>
+<li>现在着手进行一些小的调查。（root，着手）</li>
+<li>它们正在进行研究。（root，研究）</li>
+</ol>
+</blockquote>
+<p>例1中有两个动词——“着手”和“进行”，进行的语义较虚，所以把root指向“着手”；同理，例2将root指向研究，尽管从语言学上讲，研究已经“名词化”了，但是相对于进行来说，它依然是这一语义事件的核心述谓概念。以例1为例，标注结果如下所示：</p>
+<p><center><img src="../media/image-20200416214135902.png" width="420" height="110"></center></p>
+<p><center>图 17动词充当中枢论元示例3</center></p>
+<p><center><img src="../media/0e61a5af68a2a9c1da9d0bdf22246367.png" width="420" height="110"></center></p>
+<p><center>图 18动词充当中枢论元示例4</center></p>
+<blockquote>
+<p>3.他一边写作业，一边听歌。（root，写）</p>
+</blockquote>
+<p>例3从句法上讲，是一个并列复句，从语义上讲，是一个事链。两个动词“写”和“听”对于这个事链的贡献值是一样的。所，我们默认将root指向第一个述谓概念。标注结果如下所示：</p>
+<p><center><center><img src="../media/9810256c0973054b50297caa726b6315.png" width="420" height="110"></center>
+   </center></p>
+<p><center>图 19动词充当中枢论元示例5</center></p>
+<p><center><center><img src="../media/9429c18a217f71326593e8f4e4ed0b75.png" width="420" height="110"></center>
+ </center></p>
+<p><center>图 20动词充当中枢论元示例6</center></p>
+<blockquote>
+<p>4.我希望他来。（root，希望）</p>
+<p>5.他来不来还不知道。（root，知道）</p>
+</blockquote>
+<p>例4和例5都涉及到了主谓短语充当某一句法成分的情况。例4是主谓短语做宾语，例5是主谓短语做主语句。这时候，两个动词在语义事件上的地位是不平等的，即这个主谓短语是做了核心动词的一个论元，具体来说，就是“他来”是希望的一个客事角色。所以我们将root指向句子主干中的述谓概念，主谓短语中的述谓概念做降级关系处理。以例4为例，标注结果如下所示：</p>
+<p><center><img src="../media/29152ad31414c546accb16238465676d.png" width="420" height="110"></center></p>
+<p><center>图 21动词充当中枢论元示例7</center></p>
+<p><center><img src="../media/9bf42f96479379bb942eb5a603a286af.png" width="420" height="110"></center></p>
+<p><center>图 22动词充当中枢论元示例8</center></p>
+<blockquote>
+<p>6.他看着剪下来的地图。（root，看）</p>
+</blockquote>
+<p>例6中也有两个动词，“看”和“剪”。但是动词“剪”在这里并不是一个述谓概念，而是转位做了指称概念，充当一个修饰成分，所以root指向“看”，而“剪”被标注为反关系。标注结果如下所示：</p>
+<p><center><img src="../media/image-20200416214226711.png" width="420" height="110"></center></p>
+<p><center>图 23动词充当中枢论元示例9</center></p>
+<p><center><img src="../media/image-20200416214237791.png" width="420" height="110"></center></p>
+<p><center>图 24动词充当中枢论元示例10</center></p>
+<p>更详细的标注细则，在后文中皆有叙述。</p>
+<p>3） <strong>语义事件中既有动词也有形容词的情况。</strong></p>
+<p>主要有两种情况：</p>
+<p>如果句子是形容词和动词联合构成复杂语义事件时，我们将root指向第一个述谓概念。对比下面两个例句：</p>
+<blockquote>
+<ol>
+<li>他从小就很聪明，非常喜欢买书、读书。（root，聪明）</li>
+<li>孙中山长得像他的母亲，性格比较安静。（root，长）</li>
+</ol>
+</blockquote>
+<p>例1中有四个述谓概念，分别是“聪明、喜欢、买、读书”，我们默认将root指向第一个述谓概念——形容词“聪明”。例（2）有两个述谓概念，分别是“长、安静”，我们默认将root指向第一个述谓概念——动词“长”。</p>
+<p>也就是说，当语义事件中，同时出现形容词和动词并构成复杂语义事件时，谁是中枢论元不是按照词类确定的，主要看谁的位置在前。</p>
+<h2 id="34">3.4特殊谓词的标注细则</h2>
+<p>上文已经提及，单一语义事件中也会出现多个动词的情况。在选定了中枢论元root后，如何对于剩余动词进行合理的标注，是一个亟待解决的问题。《现代汉语》将动词分为七种意义类别，分别是动作行为动词、心理活动动词、存在变化消失类、判断动词、能愿动词、趋向动词以及形式动词。动作行为动词一般表示主体的动作行为，经常做语义事件的中枢论元。在此，我们再举出几个例子：</p>
+<blockquote>
+<p>1.他送给我一本新词典。（root，送）</p>
+<p>2.一个游击队员突然说。（root，说）</p>
+<p>3.门关得严严的。（root，关）</p>
+<p>4.那件事原来是他搞的。（root，搞）</p>
+</blockquote>
+<p>上述例（1）（2）（3），“送、说、关”等都是动作行为动词，我们将root指向这些动词。例（4）的“搞”虽然意义比较虚，我们还是将root指向它。</p>
+<p>但是，我们再看几个例子：</p>
+<blockquote>
+<p>5.外商到中西部地区进行投资。</p>
+<p>6.他拿出一本书来。</p>
+<p>7.这可能会改变我们的生活。</p>
+</blockquote>
+<p>这三个例子都是单一语义事件，但是都包含了不止一个动词，例（5）有形式动词“进行”，例（6）涉及到趋向动词“出来”，例（7）包括了能愿动词“可能”和“会”。结合语义我们得知，每一个语义事件的核心述谓概念都不是这些辅助性的动词，而是那些具有明显动作行为的动词。试比较下面两组句子：</p>
+<p>a）</p>
+<blockquote>
+<p>外商到中西部进行地区投资。</p>
+<p>这改变我们的生活。   </p>
+</blockquote>
+<p>b）</p>
+<blockquote>
+<p>外商到中西部进行</p>
+<p>他出一本书来。</p>
+<p>这可能会我们的生活。</p>
+</blockquote>
+<p>a组和b组句子是例（5）到例（7）的变体，a组句子是将所有的心理活动动词、能愿动词去掉后的句子，我们发现，虽然句子的一些“情态义”消失了，但是句子的“命题义”并不受影响；b组句子是将动作行为动词去掉后的结果，我们发现，这些句子不能完整的表达一个清晰的语义事件。所以，我们将root指向那些动作行为动词。</p>
+<p>接下来的问题是，对于表达一些“情态义”的述谓概念，我们如何标注。接下来，分别叙述判断动词、形式动词、趋向动词、心理活动动词以及能愿动词的标注细则。</p>
+<h3 id="341">3.4.1判断动词</h3>
+<p>判断动词“是”表示肯定，表示事物等于什么或属于什么；表示事物的特征、质料、情况等，也可以表示事物的存在。对于判断动词，我们需要注意一种特殊情况，即判断动词“是”与副词“是”之间的语义差别。</p>
+<p><strong>判断动词“是”的标注情况。</strong></p>
+<p>“是”字最常见的用法是放在两个名词（词或短语）中间，前面的名词是句子的主语。一般来说，判断动词出现在单一语义事件中，表达的含义简单清晰，“是”就是该语句的中枢论元，用依存弧将root指向“是”即可。例如：</p>
+<blockquote>
+<ol>
+<li>他是最好的老师。（root，是）</li>
+<li>这不是新书。（root，是）</li>
+</ol>
+</blockquote>
+<p>这两个例句一肯一否，都是“是”作为判断动词的用法。“是”作为判断词，是一种特殊的动词，判断词加名词构成一个“合成谓语”。所以，“是”的客体角色是相对固定的，粗粒度标签是系事角色，细粒度标签为类事角色，而主体角色需要根据相应的语言情况进行标注。具体分析例2——“这”是一个范围角色，“书”是系事角色（类事角色），“新”是一个修饰角色，“不”是否定修饰。标注结果如下所示：</p>
+<p><center><img src="../media/image-20200416214322662.png" width="420" height="110"></center></p>
+<p><center>图 25判断动词示例1</center></p>
+<p><center><img src="../media/image-20200416214330029.png" width="420" height="110"></center></p>
+<p><center>图 26判断动词示例2</center></p>
+<p><strong>副词“是”的标注情况。</strong></p>
+<p>副词“是”常常用在谓语动词、形容词前，表示肯定的情况。这些情况中的“是”从语句语调的角度来看，需要重读，相当于“确实”的意思，不能省略。但是，“是”不重读的时候，可以省略，只表示一般的肯定，可以与句末语气词“的”配合构成“是……的”结构。不论重读还是轻读，副词“是”表示的都是语气上的含义。所以一般来说，我们将它的粗粒度标签标注为依附标记mDEPD，细粒度标注为情态标记mMod，依附在中枢论元上。例如：</p>
+<blockquote>
+<ol>
+<li>今天是很冷。（root，冷）</li>
+<li>他的家底老肖是知道的。（root，知道）</li>
+</ol>
+</blockquote>
+<p>这两个例句分别是重读的“是”和轻读的“是”，都标注为依附标记。注意例（2）与“的”字短语的区别。</p>
+<blockquote>
+<p>​ 3.他是卖菜的。（root，是）</p>
+</blockquote>
+<p>例（2）与例（3）形式上都是“是……的”的结构，但是二者表达含义不同。例（2）是副词“是”，需要标注为依附标记，而例（3）是判断动词“是”，需要标注为中枢论元root。以例2为例，“老肖”是知道的主体角色（粗粒度为施事角色额，细粒度为感事角色），“他的家底”是“知道”的客体角色（粗细标签皆为当事角色），而“是”和“的”是依附标记。所以标注结果如下图所示：</p>
+<p><center><img src="../media/image-20200416214357046.png" width="420" height="110"></center></p>
+<p><center>图 27判断动词示例3</center></p>
+<p><center><center><img src="../media/39c1573d9689ee08099e0d7dd4686f51.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 28判断动词示例4</center></p>
+<p><strong>其他“是”的标注情况。</strong></p>
+<p>有时候，“是”在语句中出现的时候，形式上看起来似乎像是判断动词或者是副词，而实际上，它们是连词“不是、而是、还是、就是”等。这种情况，我们要将它们的粗粒度标签标注为关系标记mRELA，细粒度标签标注为连词标记mConj,依附在每一个语义事件的核心述谓概念上。例如：</p>
+<blockquote>
+<ol>
+<li>
+<p>他在休息的时候，不是看书，就是看报。（root，看1<a href="表示句子中第一个“看”，下同。">^3</a>）</p>
+</li>
+<li>
+<p>草地并不是金色的，而是绿色的。（root，是1）</p>
+</li>
+</ol>
+</blockquote>
+<p>例1中的“不是，就是”是表示选择关系的连词，我们将它们的粗粒度标签标注为关系标记mRELA，细粒度标签标注为连词标记mConj。例2中的“不是、而是”虽然从形式上看是连词，但是实际上是判断动词，真正的连词是“而”。第一个“是”是root，第二个“是”是表示选择关系的另一个事件，应该标注为eSelt（粗细粒度标签相同），依附在第一个“是”上。例2的标注结果如下所示：</p>
+<p><center><img src="../media/image-20200529120457354.png" width="500" height="140"></center></p>
+<p><center>图 29判断动词示例5</center></p>
+<p><center><center><img src="../media/668037ed2fe662f02cbbb3c199e37aaa.png" width="500" height="140"></center>
+</center></p>
+<p><center>图 30判断动词示例6</center></p>
+<p><strong>综上，“是”有三种标注情况：</strong></p>
+<ol>
+<li>
+<p>判断动词“是”应该标注为中枢论元root；</p>
+</li>
+<li>
+<p>副词“是”标注为依附标记mDEPD（细粒度为mMod）</p>
+</li>
+<li>
+<p>由“是”构成的连词“不是、而是、就是”等标注为连词标记mConj。</p>
+</li>
+</ol>
+<h3 id="342">3.4.2形式动词</h3>
+<p>形式动词一般是指“进行、加以、给以、给予、予以”等语义虚化的动词，它们是本身不具有实在意义而只能用动名词或以动名词为中心语的偏正短语作宾语的动词。从句法上说，“进行”的功能之一是将动词宾语名词化；而从语义上将，真正表示该语义事件动作行为的是形式动词后面的动词，而且后面动词的受事常常在前面。例如：对优秀员工进行表扬。实际的语义是“表扬优秀员工”。核心述谓概念是“表扬”而非“进行”，所以我们将root指向动词“表扬”，形式动词标注为依附标记mDEPD，细粒度标签为虚化标记mVain，依存于中枢论元上。例如：</p>
+<blockquote>
+<ol>
+<li>他们正在进行研究。（root，研究）</li>
+<li>此类活动必须予以制止。（root，制止）</li>
+</ol>
+</blockquote>
+<p>分析：以句1为例，中枢论元是“研究”，“他们”是研究的主体，“正在”表示的是时间，而“进行”的作用是将研究名词化。所以，标注结果如下图所示：
+<center><img src="../media/image-20200416213151806.png" width="420" height="110"></center></p>
+<p><center>图 31形式动词示例1</center></p>
+<p><center><center><img src="../media/778b0b9f560777473bf33189dcd9b96a.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 32形式动词示例2</center></p>
+<p>但是，有时候，这些形式动词可以“独当一面”，在语义事件中表达完整的动作，这个时候，我们把它们标注为root。例如：</p>
+<blockquote>
+<ol>
+<li>考试进行了三个小时。（root，进行）</li>
+<li>一切都在按计划进行。（root，进行）</li>
+</ol>
+</blockquote>
+<p>分析：以句1为例，该句只有一个谓词，即进行，所以它被标注为中枢论元，考试是当事角色，三个小时是时间角色。所以，标注结果如下图所示：</p>
+<p><center><center><img src="../media/5b703730eac834bbef4111c8056b81c9.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 33形式动词示例3</center></p>
+<p><center><center><img src="../media/01416d12dc6417c9ecae5409da02990b.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 34形式动词示例4</center></p>
+<p>注意区分一种情况，“开始继续”类动词。这几个动词有实际意义，同时也有虚化的倾向，但是又没有虚化到像形式动词一样，可以省略或者被其他意义很虚的词替代的地步。所以，我们仍然将root指向它们。</p>
+<blockquote>
+<p>例如：从明天开始干。（root，开始）</p>
+</blockquote>
+<p>分析：“开始”和“干”都是动词，似乎都可以充当中枢论元，但是我们规定将root指向了“开始”，而“干”是“开始”的一个后继动作，所以标注为后继事件关系。标注结果用依存图结构表示如下：</p>
+<p><center><center><img src="../media/f70a9860b65c4b50930a774492f854f5.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 35形式动词示例5</center></p>
+<p><center><center><img src="../media/95aa6353bc363726fbd70761a339a88c.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 36形式动词示例</center></p>
+<p><strong>综上，形式动词有两种标注情况：</strong></p>
+<ol>
+<li>
+<p>形式动词与其他动词结合，意义虚化时，标注为依附标记mDEPD，细粒度标签为虚化标记mVain，依存于中枢论元；</p>
+</li>
+<li>
+<p>形式动词单独出现，表达完整的语义，标注为root。</p>
+</li>
+</ol>
+<h3 id="343">3.4.3趋向动词</h3>
+<p>趋向动词表示移动的趋向，可以单独作谓语或者谓语中心，但是经常用在别的动词或者形容词的后边表示趋向，作趋向补语。趋向动词是一个封闭的词类，有单音节的，也有多音节的，多音节的趋向动词可以合用，也可以连用。所有的趋向动词如下表所示：</p>
+<p><strong>表格 6趋向动词总表</strong></p>
+<p><center><img src="../media/image-20200416215139679.png" width="420" height="110"></center></p>
+<p>根据不同的用法，趋向动词也有不同的标注方法。</p>
+<p><strong>1）单独作谓语或者谓语中心的情况。</strong></p>
+<p>趋向动词单独作谓语或谓语中心的时候，我们将root指向这个趋向动词。</p>
+<blockquote>
+<p>例如：月亮下去了，太阳还没有出来。（root，下去）</p>
+</blockquote>
+<p>分析：本句中的“下去”和“出来”都是趋向动词，我们将root指向第一个趋向动词“下去”，而“出来”是前一句的一个后继事件，依附在“下去”上，标注为后继事件关系eSucc。标注结果如下所示：</p>
+<p><center><center><img src="../media/2eba794aa0a63c78cbbb1bec7d29955a.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 37趋向动词示例1</center></p>
+<p><center><center><img src="../media/2eba794aa0a63c78cbbb1bec7d29955a.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 38趋向动词示例2</center></p>
+<p><strong>2）作趋向补语的情况。</strong></p>
+<p>相比于趋向动词单独作谓语或者谓语中心的情况，趋向动词依附于别的谓词后面表示趋向补语，是更常见的情况。这种情况，按照粗粒度标注标签，统一标注为mDEPD，按照细粒度标注标签，根据不同的语义倾向，可以细分为趋向标记mDir，时间标记mTime等。且看如下一些例子：</p>
+<blockquote>
+<ol>
+<li>企业产权转让的收入，要集中\&lt;起来>再投资。（root，集中）</li>
+<li>没有任何资料显示他们破坏\&lt;过>这些资料。（root，显示）</li>
+<li>拿\&lt;出来>一本书 VS拿\&lt;出>一本书\&lt;来>（root，拿）</li>
+</ol>
+</blockquote>
+<p>例1中的“起来”是趋向标记mDir，例2中的“过”是时间标记mTime。都依附于之前的动词做趋向补语，粗粒度标签为mDEPD。前文讲过，趋向补语可以分开使用，例3中当“出来”合用时，依存弧指向“拿”，当“出来”分开用时，将“出”指向“拿”，“来”指向“出”，粗粒度标签标注为依附标记mDEPD，细粒度标签分别标注为趋向标记mDir和离合标记mSepa。有时候趋向动词做补语时意义非常虚化，例如口语中常说的“说起来、谈起来、想起来”等，我们也都将粗粒度标签标注为mDEPD，细粒度标注为虚化标记mVain。以句3为例，标注结果如下图所示：</p>
+<p><center><img src="../media/image-20200416215304050.png" width="420" height="110"></center></p>
+<p><center>图 39趋向动词示例3</center></p>
+<p><center><center><img src="../media/c6145ddfb5eb2dffc4b724b370f793b7.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 40趋向动词示例4</center></p>
+<p><center><img src="../media/image-20200529094425942.png" width="420" height="110"></center></p>
+<p><center>图41 趋向动词示例5</center></p>
+<p><center><img src="../media/image-20200529094543501.png" width="420" height="110"></center></p>
+<p><center>图42 趋向动词示例6</center></p>
+<p>综上，趋向动词有两种标注情况：</p>
+<ol>
+<li>
+<p><strong>单独作谓语或者谓语中心时，标注为中枢论元root</strong></p>
+</li>
+<li>
+<p><strong>跟在谓词后作趋向补语时，标注为依附标记mDEPD，细粒度标签根据实际语义情况，可以是时间标记mTime、趋向标记mDir等</strong></p>
+</li>
+</ol>
+<h3 id="344">3.4.4心理活动动词</h3>
+<p>心理活动动词是表示心理活动的动词，其中一些又有一定感情色彩，例如“爱、怕、恨、喜欢、羡慕、讨厌、敬佩、希望”等。心理活动动词与一般的动作行为动词相比，除了能受程度副词修饰之外，还有带宾语能力的不同。汉语中根据动词带宾语能力的不同，将只能带名词性宾语的动词称为“名宾动词”，把既能带名词性宾语，又能带为谓词性宾语的动词称为“名谓宾动词”。心理活动动词就是一种名谓宾动词。也正是因为这种可以带谓词性宾语的能力，使得心理活动动词常常会出现在兼语结构中。</p>
+<p>实际上，如何对心理活动动词进行标注并不困难，直接将root指向它们即可，而且它们的主体角色一般都是感事角色Aft（粗粒度标注为施事角色AGT），复杂的是对心理活动动词后的其他成分的标注。有三种情况：</p>
+<p><strong>1）心理活动动词带名词性宾语的情况。</strong></p>
+<p>这种情况就是“主语+谓语+宾语（SVO）”的简单句，当谓语是心理活动动词是，主语一般是感事角色Aft，宾语是客事角色Cont，表达的是主体对于某一种事物的主观态度。</p>
+<blockquote>
+<p>例如：台湾人平时都喜欢哪一类的音乐？（root，喜欢）</p>
+</blockquote>
+<p>分析：本句中，“喜欢”是中枢论元root，而“台湾人”是“喜欢”的主体感事角色Aft，“音乐”是“喜欢”的客事Cont，需要提出的是，疑问代词“哪”依附在类上，表示的是类别的范围，所以标注为范围角色。标注结果如下所示：</p>
+<p><center><img src="../media/image-20200416215403485.png" width="420" height="110"></center></p>
+<p><center>图 43心理活动动词示例1</center></p>
+<p><center><img src="../media/image-20200416215415016.png" width="420" height="110"></center></p>
+<p><center>图 44心理活动动词示例2</center></p>
+<p><strong>2）心理活动动词带谓词性宾语的情况。</strong></p>
+<p>谓词性宾语往往是一个动宾结构的短语，整句的结构是“主语+谓语+动宾短语”，这时候一个语义事件中出现了多个谓词，其中，动宾短语整体是降级作了心理活动动词的宾语，所以标注时要将这种结构关系表示出来。</p>
+<blockquote>
+<p>例如：我喜欢写作业。（root，喜欢）</p>
+</blockquote>
+<p>分析：本句中，“喜欢”是中枢论元root，而“我”是喜欢的主体感事角色Aft，动宾短语“写作业”是“喜欢”的客事角色，又因为是降级关系，所以依存弧由“写”指向“喜欢”，标签为dCont，表示降级客事关系，而“作业”是“写”的客事角色Cont。标注写过如下所示：</p>
+<p><center><img src="../media/image-20200416215443733.png" width="420" height="110"></center></p>
+<p><center>图 45心理活动动词示例3</center></p>
+<p><center><center><img src="../media/f1e29aad983fa8b98eb920c932bfc74d.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 46心理活动动词示例4</center></p>
+<p><strong>3）心理活动动词出现在兼语结构中的情况。</strong></p>
+<p>兼语结构有多种类型，心理活动动词是其中的一种情况。构成的句法结构是“主语N1+谓语V1+主语/宾语N2+谓语V2”。N2既是V1的宾语，又是V2的主语，我们可以理解为兼语，那么出现了多父亲节点的特殊现象；也可以理解为主谓短语做宾语，那么就出现了嵌套事件关系。标注的时候，我们要将这些语言知识表达出来。</p>
+<blockquote>
+<p>例如：我喜欢她聪明。（root，喜欢）</p>
+</blockquote>
+<p>分析：本句中，“喜欢”是中枢论元root，而“我”是喜欢“”的主体角色，“喜欢”的客事是一个主谓短语“她聪明”，所以标注为dCont，依存弧由“喜欢”指向“聪明”，同时，“她”是“喜欢”的客事Cont，“她”又是“聪明”的主体当事角色Exp。完整的标注结构如下所示：</p>
+<p><center><center><img src="../media/7de69bf6c7f4c3a8bf7215a2f74e543d.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 47心理活动动词示例5</center></p>
+<p><center><img src="../media/image-20200417093259278.png" width="420" height="110"></center></p>
+<p><center>图 48心理活动动词示例6</center></p>
+<p>综上，对于心理活动动词的标注很简单，直接将中枢论元root指向它即可，对于心理活动动词后的待标成分，需要重点分析。</p>
+<h3 id="345">3.4.5能愿动词</h3>
+<p>能愿动词又叫助动词，能用在动词、形容词前边表示客观的可能性、必要性和人的主观意愿，主要作用是评议动词、形容词。表可能的能愿动词有：能、能够、会、可能、可以、可等；表必要的能愿动词有：要、应、应该、应当等；表意愿的能愿动词有：肯、敢、要、愿、愿意等。要注意区别一种情况：有部分能愿动词除了能够用在动作行为动词之前做状语外，还可兼类作一般动词，例如“会说英文”VS“会英文”，前者中的“会”是能愿动词，表示可能性，整个短语的语义中心在“说”上面，而“会”只表示一种情态上的意义；后者中的“会”是一般动词，表示能力，能够。对于这种形式上易混淆的情况，我们分别进行说明。</p>
+<p>能愿动词出现在动词、形容词前，一般做状语，整个语义事件的中枢论元是后面的谓词而非能愿动词，所以，我们将root指向后面的核心述谓概念，而将能愿动词指向核心述谓概念，粗粒度标签标注为依附标记mDEPD，细粒度标注标签为情态标记mMod。例如：</p>
+<blockquote>
+<ol>
+<li>他很快就要退休了。（root，退休）</li>
+<li>你敢不敢答应我。（root，答应）</li>
+</ol>
+</blockquote>
+<p>分析：以句1为例，root为“退休”，“要”依附在“退休”上，标注为mDepd，表示这是一个依附性成分。标注结果如下所示：</p>
+<p><center><center><img src="../media/2f9c193a4416d9399d24339880bc8f6d.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 49能愿动词示例1</center></p>
+<p><center><img src="../media/image-20200417093352916.png" width="420" height="110"></center></p>
+<p><center>图 50能愿动词示例2</center></p>
+<p>对于兼类的能愿动词作一般的动作行为动词时，我们根据实际语义关系，按照一般动词的情况进行标注即可。例如：</p>
+<blockquote>
+<ol>
+<li>我要一杯茶。（root，要）</li>
+<li>他会英文、法文、希腊文等三种外文。（root，会）</li>
+</ol>
+</blockquote>
+<p>分析：本句中的“要”在这里是一个一般性的动作行为动词，标注为中枢论元root，“我”是主体角色，“茶”是客体角色。对应的标注结果如下图所示：</p>
+<p><center><img src="../media/image-20200417093524742.png" width="420" height="110"></center></p>
+<p><center>图 51能愿动词示例3</center></p>
+<p><center><center><img src="../media/6dc91bc223ca86eb95174baf7aa80ce0.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 52能愿动词示例4</center></p>
+<p>综上，对于能愿动词，由于它们在语义事件中主要表达的是主体的一种主观态度，所以，我们不把root指向它们，而是将它们标注为依附标记。</p>
+<h2 id="35">3.5谓词特殊结构的标注细则</h2>
+<p>除了需要对特殊的动词进行必要的标注说明外，谓词也会构成一些特殊结构，这些特殊结构也需要规范化的细则。我们从两方面来说：</p>
+<p>首先从谓词的内部结构看。汉语是一种缺乏形态变化的孤立语，但是有些动词会出现一些形态上的变化，主要是重叠以及离合。</p>
+<p>其次从谓词的外部组合看。不同的谓词可以构成并列结构、兼语结构、连谓结构、中补结构。</p>
+<p>对于上述各种特殊结构，接下来，我们逐一进行说明。</p>
+<h3 id="351">3.5.1重叠式</h3>
+<p>有些动词可以重叠，表示短暂、轻微的含义。</p>
+<p>单音节动词的重叠式为“AA式”，例如：“想想”、“说说”等。变体形式为“A一A式”或者“A了A式”。在实际待标语句中，由于分词结果，AA式重叠常常被分成一个词语，可以单独作一个述谓概念，而“A一A式”以及“A了A式”，在分词时常常被分成三个待标成分。标注时，我们把第一个A作为核心，依存弧指向第二个A，标注为语义依附标记mDEPD，细粒度标注标签为重复标记mRept，表示第二个A和第一个A实际是一个词，中间的插入成分粗粒度标签标注为依附标记mDEPD，细粒度标签标注为时间标记mTime（了）或者频次标记mFreq（一），也是依附在第一个A上。标注范式如下图：</p>
+<p><center><center><img src="../media/512cdab072895e73330c8502f26c5835.png" width="200" height="60"></center>
+</center></p>
+<p><center>图 53重叠式范式1</center></p>
+<p><center><img src="../media/image-20200417093559491.png" width="200" height="60"></center></p>
+<p><center>图 54重叠式范式2</center></p>
+<p><center><img src="../media/image-20200417093641638.png" width="200" height="60"></center></p>
+<p><center>图 55重叠式范式3</center></p>
+<p><center><img src="../media/image-20200417093654645.png" width="200" height="60"></center></p>
+<p><center>图 56重叠式范式4</center></p>
+<blockquote>
+<p>例如：他说了说他的想法。（root，说1）</p>
+</blockquote>
+<p>分析：本句中root指向第一个“说”，而“他”和“他的想法”分别是“说”的主客体角色。标注结果如下所示：</p>
+<p><center><img src="../media/image-20200417093723610.png" width="420" height="110"></center></p>
+<p><center>图 57重叠式示例1</center></p>
+<p><center><center><img src="../media/2e74e6f1f1ac89a8db5dc869607600ea.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 58重叠式示例2</center></p>
+<p>双音节动词的重叠式为“ABAB式”，例如：“研究研究”、“打扫打扫”等。分词的结果通常是AB/AB，，我们把第一个AB作为核心，第二个AB依附在其上，粗粒度标签标注为依附标记mDEPD，细粒度标注标签为重复标记mRept，表示这是一个重复性的话语。标注范式如下：</p>
+<p><center><img src="../media/image-20200417093806980.png" width="200" height="60"></center></p>
+<p><center>图 59重叠式范式5</center></p>
+<p><center><img src="../media/image-20200417093817382.png" width="200" height="60"></center></p>
+<p><center>图 60重叠式范式6</center></p>
+<blockquote>
+<p>例如：我研究研究这个课题。（root，研究1）</p>
+</blockquote>
+<p>分析：本句中，“研究1”是句子的中枢论元，“我”和“这个课题”分别是研究的主客体角色。标注结果如下所示：</p>
+<p><center><center><img src="../media/5165f2d9c53263a90f6f16b15458d43d.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 61重叠式示例3</center></p>
+<p><center><img src="../media/image-20200417093921710.png" width="420" height="110"></center></p>
+<p><center>图 62重叠式示例4</center></p>
+<p>在部分口语语料中，会遇到这样的情况。动宾短语加上语气，形成一个祈使句，并重复使用，表示一种呼喊或者命令。</p>
+<blockquote>
+<p>例如：开会了，开会了！（root，开会1）</p>
+</blockquote>
+<p>分析：我们同样把第二个“开会”作为第一个“开会”的重复成分，标注为标注重复标记mRept，粗粒度标签为依附标记mDEPD。结果如下所示：</p>
+<p><center><center><img src="../media/3d139509b9c0ea77712460a95167efb7.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 63重叠式示例5</center></p>
+<p><center><img src="../media/image-20200417093948316.png" width="420" height="110"></center></p>
+<p><center>图 64重叠式示例6</center></p>
+<p>综上：动词的重叠式标注，无论是单音节重叠，还是双音节重叠，或者是口语中国句子的重叠，我们都将第二个重叠成分作为第一个成分的重复标记，粗粒度标注标签为mDEDP，细粒度标注标签mRept，依存弧由第一个成分指向第二个成分。</p>
+<h3 id="352">3.5.2离合式</h3>
+<p>离合词在语法研究上一直都是重点，比如“毕业、见面、游泳、散步”等，合用时是一个词，分开时是一个动宾短语，所以有人认为是短语，有人认为是词，还有人认为离则为短语，合则为词。正是由于离合词的可离可合的特点，在标注时也有不同的情况。</p>
+<p>当离合词合用的时候，依据分词结果，是一个待标成分，不存在标注存疑的情况。</p>
+<p>当离合词分开使用的时候，中间可以添加其他成分，例如“洗澡”、“洗个澡”、“洗个热水澡”等动宾短语，从语义上说，一般宾语是动词的客事角色，但是，在标注的时候，我们不将动词支配的宾语标注为该动词的离合标记mSepa。这是因为，离合标记连接的两个成分一定是动宾短语，而如果我们标注为普通动宾短语的话，就难以抽取出离合短语应有的结构特征。但是将细粒度标签升级为粗粒度标签的时候，要将离合标记升级成为客事角色CONT。这样的处理策略，既能在粗粒度标签体系下体现离合短语动宾结构的特征，又能在细粒度标签体系下对离合短语进行特殊化处理，彰显出汉语离合短语的特殊性。如果我们可以将离合词AB的形式表示为“A……B”的话，那么标注范式为：</p>
+<p><center><center><img src="../media/f126fdea5d5f0b8d18725b6fe151110e.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 65离合式范式1</center></p>
+<p><center><center><img src="../media/f240c3d917992cb63651600015e55b34.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 66离合式范式2</center></p>
+<p>例如下面两个例句：</p>
+<blockquote>
+<ol>
+<li>我想洗个热水澡。（root，想）</li>
+<li>我想洗澡。（root，想）</li>
+</ol>
+</blockquote>
+<p>分析：句1是离合词分开使用的情况，句2是离合词合用的情况。对于句1来说，“洗个热水澡”是“想”的降级客事角色dCont，中间添加的成分按照实际语义关系进行标注，比如“个”是“洗”的依附成分，“热水”是“澡”的修饰成分；而句2中“洗澡”合用，是“想”的客事角色。句1的标注结果如下图所示：</p>
+<p><center><img src="../media/image-20200417094035067.png" width="420" height="110"></center></p>
+<p><center>图 67离合式示例1</center></p>
+<p><center><center><img src="../media/03c7346a965db07c1606b85141680adb.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 68离合式示例2</center></p>
+<p>句2的标注结果如下图所示：</p>
+<p><center><img src="../media/image-20200417094056942.png" width="420" height="110"></center></p>
+<p><center>图 69离合式示例3</center></p>
+<p><center><center><img src="../media/d109f243bc4861d9de55257e4e065128.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 70离合式示例4</center></p>
+<p>注意，离合式动宾短语的重叠形式是AAB，例如：洗洗澡，散散步。综合重叠式和并列式的标注细则，那么标注范式是：</p>
+<p><center><center><img src="../media/3ab296fc40d411b9a903fe5409656609.png" width="200" height="60"></center>
+</center></p>
+<p><center>图 71离合式范式1</center></p>
+<p><center><center><img src="../media/cbc288092af581aa79cf1ab742d148f8.png" width="200" height="60"></center>
+</center></p>
+<p><center>图 72离合式范式2</center></p>
+<p>综上，动词的离合式，粗粒度标签标注为客事角色CONT，细粒度标签标注为离合标记mSepa。</p>
+<h3 id="353">3.5.3并列式</h3>
+<p>两个或两个以上意义相关、层次相同、句法功能相同、由并列连词连接起来的语法结构成为“并列结构”。很多词类都可以并列出现，而且可以出现在各种句法位置上，表达各种语义关系或充当各种语义角色。并列的各项之间可以互换位置，它们在逻辑上不互相依赖。例如，名词的并列可以作主体角色、客体角色，形容词的并列可以作修饰角色等。在这里，我们以动词的并列为例，对于并列式结构进行一个标准化的标注制订。</p>
+<p>根据并列结构的定义，我们可以总结出几个关键性的成分：并列成分ABC等（至少两个），连词（以“和”为代表）、标点符号（以“、”为代表）。所以，并列结构可以表示为按照并列成分的多少以及种类分为以下三种情况：</p>
+<p><strong>1.A、B</strong></p>
+<p><strong>2.A和B</strong></p>
+<p><strong>3.A、B和C。</strong></p>
+<p>事实上，很多标注规范都对并列结构进行了详细的描述，标注的方法不尽相同，主要有以下几种形式:</p>
+<p><center><img src="../media/image-20200417094134703.png" width="300" height="80"></center></p>
+<p><center>图 73并列式举例1</center></p>
+<p><center><img src="../media/image-20200417094156669.png" width="300" height="80"></center></p>
+<p><center>图 74并列式举例2</center></p>
+<p><center><img src="../media/image-20200417094206232.png" width="300" height="80"></center></p>
+<p><center>图 75并列式举例3</center></p>
+<p>由图可见，争议点主要在于并列的成分中，谁是核心成分、标点依附于谁，连词又依附于谁的问题上。针对这些问题，<strong>我们规定：</strong></p>
+<ol>
+<li>
+<p><strong>并列式中的第一个成分为核心成分，其他并列成分依次依附于前一个并列成分，粗粒度标签标注为并列事件关系eCOO，细粒度标签为eCoo；</strong></p>
+</li>
+<li>
+<p><strong>标点依附于前一个成分，粗粒度标签为mPUNC，细粒度标签为mPunc；</strong></p>
+</li>
+<li>
+<p><strong>连词依附于后一个成分，粗粒度标签为mRELA，细粒度标签为mConj。</strong></p>
+</li>
+</ol>
+<p>所以上述三种情况的标注范式分别为：</p>
+<p><center><img src="../media/image-20200417094408380.png" width="300" height="80"></center></p>
+<p><center>图 76并列式范式1</center></p>
+<p><center><center><img src="../media/bb46aaacfd49f0488ed9aaccf0d84305.png" width="300" height="80"></center>
+</center></p>
+<p><center>图 77并列式范式2</center></p>
+<p><center><center><img src="../media/e0820274208ec5c3827921705de1da30.png" width="300" height="80"></center>
+</center></p>
+<p><center>图 78并列式范式3</center></p>
+<p><center><img src="../media/image-20200417094434181.png" width="300" height="80"></center></p>
+<p><center>图 79并列式范式4</center></p>
+<p><center><center><img src="../media/f0d4b9cac657dd6bcccc03ce7b5f6da9.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 80并列式范式5</center></p>
+<p><center><center><img src="../media/b857c8d61b0c315233046ab3f2751adb.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 81并列式范式6</center></p>
+<blockquote>
+<p>例如：他一个人吃饭、喝水以及睡觉。（root，吃饭）</p>
+</blockquote>
+<p>分析：这个句子属于并列式的第三种类型，其中，“吃饭”是核心，标注为root，“喝水”依附在“吃饭”上，“睡觉”依附在“喝水”上，“顿号”依附在“吃饭”上，“以及”依附在“睡觉”上。不能忘记的是，“吃饭”、“喝水”以及“睡觉”的主体角色都是“他”，即“他”是一个多父亲节点的节点，实际上，并列结构常常会出现交叉弧现象。另外还有一个标注难点：“他”和“一个人”的关系——“一个人”是对“他”的复指，相当于同位关系，所以细粒度标签标注为等同关系eEqu，而粗粒度标签标注为并列关系eCOO。所以标注结果如下所示：</p>
+<p><center><img src="../media/image-20200417094505225.png" width="500" height="140"></center></p>
+<p><center>图 82并列式示例1</center></p>
+<p><center><img src="../media/image-20200417094524264.png" width="500" height="140"></center></p>
+<p><center>图 83并列式示例2</center></p>
+<p>注意：并列相可以是词、短语也可以是句子。虽然严格来说。并列式短语与并列事件关系不是一回事，但是为节约语义标签，我们将它们都标注为eCoo，关于并列事件关系的标注，详见5.4小节。</p>
+<h3 id="354">3.5.4兼语式</h3>
+<p>兼语式是这样一种结构：由前一动词到的宾语兼做后一谓语的主语，即动宾短语的宾语和主谓短语的主语套叠，形成一个有宾语兼主语双重身份的“兼语”。有兼语的短语叫做兼语短语，由兼语短语充当谓语或独立成句的句子叫做兼语句。根据兼语前一动词的语义，常见的兼语句有以下几种：</p>
+<p><strong>表格 7兼语式类型表</strong></p>
+<table>
+<thead>
+<tr>
+<th>句式类型</th>
+<th>常见动词</th>
+<th>表达含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>爱恨式</td>
+<td>“称赞，表扬，夸，笑，骂，爱，恨，嫌，喜欢，感谢，埋怨”等心理活动的及物动词。</td>
+<td>前一动词是表示赞许、责怪或心理活动的及物动词，它是由兼语后面的动作或性状引起的，前后谓词有因果关系。</td>
+</tr>
+<tr>
+<td>使令式</td>
+<td>“请，使，叫，让，派，催，逼，求，托，命令，吩咐，动员，促使，发动，组织，鼓励，号召”等具有致使意义的动词。</td>
+<td>前一动词有使动意义，能够引起一定的结果。</td>
+</tr>
+<tr>
+<td>选定式</td>
+<td>具有“选聘，称，说”意义的动词。</td>
+<td>前一动词有“选聘”等意义，兼语后头的动词有“为，当，做，是”等。</td>
+</tr>
+<tr>
+<td>“有”字式</td>
+<td>“有，轮”等表示存在或领有的动词。</td>
+<td>前一动词用“有，轮”等表示领有或存在等。</td>
+</tr>
+</tbody>
+</table>
+<p>我们用“N1+V1+N2+V2”来表示兼语句句式特征。对于兼语句的标注，主要有两个方面的特征一定要标注出来：</p>
+<ol>
+<li>
+<p><strong>N2与V1和V2的语义关系</strong>。兼语式的特征之一就是N2节点出现了多父亲节节点的现象。</p>
+</li>
+<li>
+<p><strong>V1和V2之间的语义关系。</strong>这两个述谓概念也会构成一定的语义联系，需要标注出来。</p>
+</li>
+</ol>
+<p>前文在讲述心理活动动词是，对于爱恨事兼语的标注有了解释，由于“爱恨式”的N1有很强的主观施动性，所以我们把“N2+V2”结构视为V1的降级客事角色，而N1的语义角色也相对固定，细粒度标签为感事角色Aft，粗粒度标签为施事角色AGT，而其他待标成分之间的语义关系需要结合语境。具体例子可参照心理活动动词示例。标注范式为：</p>
+<p><center><center><img src="../media/36930f5c1e01851fc8334542b01e4d63.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 84兼语式范式1</center></p>
+<p><center><img src="../media/image-20200417094606808.png" width="420" height="110"></center></p>
+<p><center>图 85兼语式范式2</center></p>
+<p>对于使令式的兼语，一般来说，由于使令式的动词都具有主观施动性，所以N2是V1的受事角色PAT（细粒度标签也是受事角色），N2是V2的主体角色，而V2是V1的一种结果，所以我们标注为结果事件关系eSUCC，细粒度标签为eResu，其他待标成分之间的语义关系需要结合语境。标注范式为：</p>
+<p><center><img src="../media/image-20200529120618505.png" width="420" height="110"></center></p>
+<p><center>图 86兼语式范式3</center></p>
+<p><center><img src="../media/image-20200529120703755.png" width="420" height="110"></center></p>
+<p><center>图87 兼语式范式4</center></p>
+<blockquote>
+<p>例如：微笑使你年轻。（root，使）</p>
+</blockquote>
+<p>分析：微笑是使的当事角色，你是使的受事角色，同时也是年轻的当事角色。所以标注结果如下图所示：</p>
+<p><center><img src="../media/image-20200530092753795.png" width="420" height="110"></center></p>
+<p><center>图88 兼语式示例1</center></p>
+<p><center><img src="../media/image-20200530092833004.png" width="420" height="110"></center></p>
+<p><center>图89 兼语式示例2</center></p>
+<p>对于选定式和“有”字式的兼语，一般来说，由于这类兼语的前一动词多是对客观情况的描述、动作性不强，所以我们标注为后继事件关系eSUCC，细粒度标签标注为eSucc，其他待标成分需要结合具体语境，所以标注范式为：</p>
+<p><center><img src="../media/image-20200417094714332.png" width="420" height="110"></center></p>
+<p><center>图 90兼语式范式5</center></p>
+<p><center><center><img src="../media/8d7c7253b4066608994cd6a0ba565696.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 91兼语式范式6</center></p>
+<p>例如下面两个例句分别是选定式和“有”字式：</p>
+<blockquote>
+<ol>
+<li>大家选他当班长。（root，选）</li>
+<li>他有个妹妹很能干。（root，有）</li>
+</ol>
+</blockquote>
+<p>分析：以句1为例，“大家”是“选”的施事角色，“他”是“当”的当事角色，“班长”是“当”的成事角色。所以，标注结果如下图所示：</p>
+<p><center><img src="../media/image-20200530093039884.png" width="420" height="110"></center></p>
+<p><center>图 92兼语式示例3</center></p>
+<p><center><center><img src="../media/3d97b5247c9113fb7a98573b9d92b301.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 93兼语式示例4</center></p>
+<p><strong>综上，对于兼语式，根据V1和V2的关系，一共出现了三种标注情况：</strong></p>
+<ol>
+<li>
+<p><strong>爱恨式</strong>。依存弧由V1指向V2，是降级客事关系，粗粒度标签为dCONT，细粒度标签为dCont；</p>
+</li>
+<li>
+<p><strong>使令式</strong>。依存弧由V1指向V2，是结果事件关系，粗粒度标签为eSUCC，细粒度标签为eResu；</p>
+</li>
+<li>
+<p><strong>选定式和“有”字式</strong>。依存弧由V1指向V2，是后继事件辊系，粗粒度标签标注为eSUCC，细粒度标签标注为eSucc。</p>
+</li>
+</ol>
+<p>对比上述三种标注类型，我们发现，依存弧的指向是一致的，只是语义关系不同，这与V1表达的语义有很大的关系。除了上述四种基本的类型之外，还有一些其他类型的兼语句分类标准，但是上述三种标注方式基本能包含所有的兼语句类型，例如，“协助类、陪伴类”等的兼语可以按照第三种标注方式标注。所以，此处对于其他语义类型的兼语句式就不做细说。</p>
+<h3 id="355">3.5.5连谓式</h3>
+<p>连谓式是这样一种结构：由多项谓词性成分连用、谓词性成分之间没有语音停顿，也不用任何关联词语的短语叫做连谓短语，由连谓短语充当谓语或者独立成句的句子叫做连谓句。对于连谓句的语义依存图标注，必须要标注说明的是：</p>
+<ol>
+<li>
+<p><strong>主语与不同谓词之间的关系</strong></p>
+</li>
+<li>
+<p><strong>不同谓词之间的关系</strong></p>
+</li>
+</ol>
+<p>连谓句可以表示多种语义关系，例如：</p>
+<blockquote>
+<ol>
+<li>他低着头不动。——前一动作是后一动作的方式。</li>
+<li>金山取了笔记本走了。——表示动作发生的先后顺序。</li>
+<li>他看书看累了。——前后两个动作表示因果关系。</li>
+</ol>
+</blockquote>
+<p>等等。</p>
+<p>但是连谓式内部的几个谓词不管内部语义如何，排列顺序大部分都是按照时间先后。后一动作是前一动作的继续，粗粒度标签标注为后继事件关系eSUCC，细粒度标签标注为eSucc。如果将连谓式的结构表示为“N1+V1+V2”的话，同时我们要注意，一般情况下，这两个谓词都与主体角色N1有关，这两个词之间的语义依存关系也需要表示出来，而语义标签信息需要结合具体语境。所以标注范式如下：</p>
+<p><center><img src="../media/image-20200417095002534.png" width="420" height="110"></center></p>
+<p><center>图 94连谓式范式1</center></p>
+<p><center><img src="../media/image-20200417095011238.png" width="420" height="110"></center></p>
+<p><center>图 95连谓式范式2</center></p>
+<blockquote>
+<p>例如：金山取了笔记本走了。（root，取）</p>
+</blockquote>
+<p>分析：本句两个动作分别是“取”和“走”。“走”是“取”的后继事件关系，同时“取”和“走”的主体角色都是“金山”。所以标注结果如下图所示：</p>
+<p><center><center><img src="../media/46e5e6df8a91e5e0ae9005bcf9d5ee9b.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 96连谓式示例1</center></p>
+<p><center><center><img src="../media/60a8088bd663b91468d474b79a27af1f.png" width="420" height="110"></center>
+</center></p>
+<p><center>图 97连谓式示例2</center></p>
+<p>注意，有时候，N1可能不是后一动作的发出者，而是后一动作造成结果的直接体验者。（详见3.5.6中补式）。</p>
+<blockquote>
+<p>例如：他看书看累了。（root，看1）</p>
+</blockquote>
+<p>分析：本句中有三个谓词性成分：“看1”，“看2”以及“累”。其中“累”是“看2”的结果，“累”也是主体他的状态。所以，标注结果如下图所示：</p>
+<p><center><img src="../media/image-20200529120816910.png" width="420" height="110"></center></p>
+<p><center>图98 连谓式示例3</center></p>
+<p><center><img src="../media/image-20200529141002995.png" width="420" height="110"></center></p>
+<p><center>图99 连谓式示例4</center></p>
+<p>有一种复杂的情况，即兼语连谓兼用句。我们可以将兼语连谓句用“N1+V1+N2+V2”表示，由于兼语连谓句中的V1多是陪伴协助类的动作，所以将V1和V2的关系标注为后继事件关系eSUCC（细粒度标签为eSucc），其他词对之间的语义关系结合具体语境进行标注。所以标注范式为：</p>
+<p><center><img src="../media/image-20200417095200662.png" width="420" height="110"></center></p>
+<p><center>图 100兼语连谓式范式1</center></p>
+<p><center><img src="../media/image-20200417095210132.png" width="420" height="110"></center></p>
+<p><center>图 101兼语连谓式范式4</center></p>
+<blockquote>
+<p>例如：我陪他上楼。（root，陪）</p>
+</blockquote>
+<p>分析：这个句子涵盖了三个语义事件，分别是：“我上楼”，“他上楼”，“我陪他”，标注的时候要将这些情况标注出来。标注结果用依存图展示如下：</p>
+<p><center><img src="../media/image-20200529120839444.png" width="420" height="110"></center></p>
+<p><center>图 102兼语连谓式示例1</center></p>
+<p><center><img src="../media/image-20200417095244144.png" width="420" height="110"></center></p>
+<p><center>图 103兼语连谓式示例2</center></p>
+<p>其实通常来说，连谓式结构有语义上的轻重，很多连谓式是前轻后重型的，例如：坐车回家|赶着做活，结构内部的语义重心在后面的“回家”和“做活”上；也有前重后轻型的，例如：买菜去|说着玩儿，结构内部的语义重心在前面的动词“买”和“说”上；还有一部分连谓结构无法分出语义上的前后差别，例如：躺着不动|喝酒喝醉了，这样的连谓式很难说清楚前后哪一个动词才是结构内部的重心。所以也是鉴于此，标注时默认的情况是将连谓结构的第一个动词作为结构中心。</p>
+<h3 id="356">3.5.6中补式</h3>
+<p>中补式是这样一种结构：由补充关系的两个成分组成，前面被补充的成分是中心语，由谓词充当，后头补充成分是补语，可以由谓词充当，例如“打\&lt;伤>”、“打\&lt;死>”；也可以由数量短语、介词短语充当，例如“踢了\&lt;三下>”、“学\&lt;到天黑>”；也可以由副词充当，例如“好\&lt;极>了”等，又叫动结式。对于中补式的标注，关键点在于补语跟句子中的哪一个待标成分具有语义上的关系。关键点在于补充成分是否跟主语或者宾语发生语义关系。</p>
+<p>试比较以下例句：</p>
+<blockquote>
+<ol>
+<li>他打\&lt;伤>了导演。（root，打）</li>
+<li>他作业写得\&lt;好>极了。（root，写）</li>
+<li>他又踢了\&lt;三次>足球。（root，踢）</li>
+</ol>
+</blockquote>
+<p>句1和句2的补语，从语义关系上讲，不仅与谓语中心有语义关系，而且与周边角色发生语义关系。句1“伤”的是“导演”，句2“好”的主体是“作业”而非“他”，但是句3中的补语是只与谓语中心语义关系。所以，以此为标准，可以将中补式的标注方式分成两种情况：</p>
+<p><strong>1.补充成分与谓语中心和主客体角色发生语义关系。</strong></p>
+<p>关于补充成分和谓语中心的关系，我们将依存弧由谓语中心指向补语，粗粒度标签标注为后继事件关系eSUCC，细粒度标签标注为eResu。同时这个补充成分作为一个新产生的动作结果，也是语义事件中某个参与者的某种状态，所以，它又依存于该参与者，与主客体角色发生语义关系。用“N1+V+VC+N2”组合来表示这种结构，VC表示补语，其中N2的位置不定，可以出现在中补结构之后，也可以由介词“把”引出，放在谓语中心之前，也可以是N2的一个附属成分。当参与者N2位置提前的时候，就会出现依存弧交叉的情况。要注意VC依附于哪一个成分上。所以标注范式如下图所示：</p>
+<p><center><img src="../media/image-20200529120903395.png" width="420" height="110"></center></p>
+<p><center>图104 中补式范式1</center></p>
+<p><center><img src="../media/image-20200529141204536.png" width="420" height="110"></center></p>
+<p><center>图105 中补式范式2</center></p>
+<blockquote>
+<p>例如：他把导演哭哭了。（root，哭1）</p>
+</blockquote>
+<p>分析：本句中，第一个“哭”是谓语中心，“他”是这个“哭1”的施事角色；“哭2”是“哭1”的结果，同时“哭2”的动作发出这是“导演”。这个句子解构出来的两个语义事件是：“他哭”和“导演哭”。所以，标注结果显示如下：</p>
+<p><center><img src="../media/image-20200529120922703.png" width="420" height="110"></center></p>
+<p><center>图106 中补式示例1</center></p>
+<p><center><img src="../media/image-20200529141335437.png" width="420" height="110"></center></p>
+<p><center>图107 中补式示例2</center></p>
+<blockquote>
+<p>再例如：他作业写得好极了。（root，写）</p>
+</blockquote>
+<p>分析：本句有两层中补式。第一层是“写”的结果补语\&lt;好>，第二层是“好”的程度补语\&lt;极>。该语义事件的中枢论元root是“写”，“写”的结果是“好”，“好”的程度是“极”，“他”是“写”的施事，“作业”是“好”的当事。也就是说，这个句子解构出来的两个语义事件是：“他写作业”和“作业好极了”。标注结果用依存图显示如下：</p>
+<p><center><img src="../media/image-20200529120942135.png" width="420" height="110"></center></p>
+<p><center>图108 中补式示例3</center></p>
+<p><center><img src="../media/image-20200529141445623.png" width="420" height="110"></center></p>
+<p><center>图109 中补式示例4</center></p>
+<p><strong>2 补充成分只与谓语中心发生语义关系。</strong></p>
+<p>当补语由数量短语或者介词短语充当的时候，补语成分往往充当某一种语义角色。例如“踢了＜两脚＞”、“走＜到天涯海角＞”、“学＜到深夜＞”，分别表示的是谓语中心的数量关系、位置关系、时间关系，所以我们将它们标注为度量，空间角色以及时间角色。依存弧由谓语中心指向补语成分。</p>
+<p>对上述三个短语的标注示例分别如下：</p>
+<p><center><center><img src="../media/c722009dfae8102183f4fe1a669b94c6.png" width="300" height="80"></center>
+</center></p>
+<p><center>图 110中补式示例5</center></p>
+<p><center><center><img src="../media/7623a4f17ddc6e9dedcb070379fc7663.png" width="300" height="80"></center>
+</center></p>
+<p><center>图 111中补式示例6</center></p>
+<p><center><img src="../media/image-20200417095601257.png" width="300" height="80"></center></p>
+<p><center>图 112中补式示例7</center></p>
+<p><center><img src="../media/image-20200417095614581.png" width="300" height="80"></center></p>
+<p><center>图 113中补式示例8</center></p>
+<p><center><center><img src="../media/1fbbf3d3826c68934ca829757a27ba92.png" width="300" height="80"></center>
+</center></p>
+<p><center>图 114中补式示例9</center></p>
+<p><center><center><img src="../media/5e88895d362f4bdf7d547c2e6d43e2c9.png" width="300" height="80"></center>
+</center></p>
+<p><center>图 115中补式示例10</center></p>
+<p>在具体的语言环境中，也可能会出现其他的语义角色，这三种是比较常见的情况。总的来说，当补语中表达的是明确的数量、时间、空间等关系的时候，我们将它们标注为语义周边角色。</p>
+<h2 id="36">3.6小结</h2>
+<p>综上就是关于中枢论元的标注细则。主要涉及到两个问题：</p>
+<ol>
+<li>
+<p><strong>如何确定某一语义事件中的中枢论元</strong></p>
+</li>
+<li>
+<p><strong>如何处理中枢论元同其他述谓概念之间的关系</strong></p>
+</li>
+</ol>
+<p>对于第一个问题，我们要找到语义事件中最核心的述谓概念。</p>
+<p>对于第二个问题，我们要对每一个述谓概念、每一种结构进行语义分析，然后再确定他们之间的语义关系。</p>
+<p>中枢论元是一个语义事件的“纲”，找出它之后，我们就可以以此为切入点，开始对句子中其他成分进行标注了。</p>
+                
+              
+              
+                <h2 id="__comments">评论</h2>
+<form id="gitalk-form" onsubmit="return false;">
+    <div id="gitalk-container"></div>
+</form>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '58daf515c72e526b3366', // add yourself's
+        clientSecret: 'c4997f5e0efb6b3f654f38dfcdadfb109739291e', // add yourself's
+        repo: 'comment',
+        owner: 'youarerare',
+        admin: ['youarerare'],
+        id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.27c6a5e6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
