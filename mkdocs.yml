@@ -2,7 +2,7 @@ site_name: 中文语义依存图标注规范
 site_url : https://csdp-doc.readthedocs.github.io
 
 nav:
-- 主页: 'index.md'
+- 引言: 'index.md'
 - 标注概述:  '语义依存图标注概述'
 - 语义关系: '语义关系概述'
 - 中枢论元: '中枢论元的标注细则'
@@ -18,22 +18,31 @@ theme:
   language : 'zh'
   icon:
     repo: fontawesome/brands/github-alt
+edit_uri: ""
+
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
+  - git-revision-date
 
 
 extra:
-  search:
-    language: 'jp'
+  generator: false
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/NLPInBLCU
     - icon: fontawesome/solid/paper-plane
       link: mailto:<yqshao163@163.com>
-  generator: false
-plugins:
-  - git-revision-date
+      name: contact with us
+repo_url: https://github.com/NLPInBLCU/ChineseSemanticDependencyDocument
+repo_name: CSDP-doc
+
 markdown_extensions:
   - toc :
       permalink: true
       toc_depth: 3
-copyright: Copyright &copy; 2020 - 2021 NLPInBLCU, All rights reserved
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+copyright: Copyright &copy; 2020 - 2021 Institute of Applied Linguistics, Beijing Language and Culture University, All rights reserved
 
