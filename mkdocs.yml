@@ -25,6 +25,9 @@ plugins:
       separator: '[\s\-\.]+'
   - git-revision-date
 
+google_analytics:
+  - UA-G-9MMQDMK711
+  - auto
 
 extra:
   generator: false
