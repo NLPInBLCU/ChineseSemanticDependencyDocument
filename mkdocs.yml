@@ -1,5 +1,5 @@
 site_name: 中文语义依存图标注规范
-site_url : https://csdp-doc.readthedocs.github.io
+site_url : https://csdp-doc.readthedocs.io
 
 nav:
 - 引言: 'index.md'
